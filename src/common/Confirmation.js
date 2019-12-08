@@ -7,7 +7,7 @@ export default function Confirmation(props) {
         <div className="col-md-12">
           <strong>{`Are you sure you want to delete '${props.name}'?`}</strong>
           <p>
-            {`All ${props.count} pokemons in this category will be deleted as well.`}
+            {`All pokemons(${props.count}) in this category will be deleted as well.`}
           </p>
         </div>
       </div>
