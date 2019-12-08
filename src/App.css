@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+body {background-color: #ffce31;}
 
 .App-logo {
   height: 40vmin;
@@ -14,8 +12,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +24,187 @@
 .App-link {
   color: #61dafb;
 }
+.App-content {
+  margin: 10px;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.pokeitem {
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #b6b6b6;
+}
+
+.nothing-to-see {
+  padding: 20px;
+  background-color: #ffffff;
+  color: #999;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.search-input{
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+  font-size: 25px;
+}
+
+.category-input{
+  margin: 10px 0;
+  padding-left: 10px;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.select-input{
+  margin: 10px 0;
+}
+
+.search-input::placeholder {
+  color: #b6b6b6;
+  opacity: 1; /* Firefox */
+}
+.poke-image{
+  padding: 10px;
+}
+.float{
+	position:fixed;
+	width:fit-content;
+	height:60px;
+  bottom:40px;
+  right: 46%;
+	background-color:#001e5e;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+button.float{
+  outline: none;
+}
+
+.checkbox{
+  padding: 70px 10px;
+}
+
+.Modal {
+  position: absolute;
+  margin: auto;
+  padding: 50px;
+  width: 60%;
+  height: fit-content;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: rgb(255, 255, 255);
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(78, 78, 78, 0.5);
+}
+
+.poke-img-small{
+  border: 1px solid #dadada9f;
+  border-radius: 50%;
+}
+
+.poke-name{
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.pill{
+  text-decoration:none;
+	padding:0 25px;
+	line-height:32px;
+	height: auto;
+	display:inline-block;
+	text-align:center;
+  border-radius: 16px;
+  text-transform: capitalize;
+}
+
+.primary{
+  background-color:#001e5e;
+  color:#fff;
+  font-size:16px;
+}
+
+.secondary{
+  background-color:#1f66ff;
+  color:#fff;
+  font-size:16px;
+}
+
+.danger{
+  background-color:#db1c1c;
+  color:#fff;
+  font-size:16px;
+}
+
+
+.right{
+  float: right;
+}
+
+.type{
+  background-color:#DDDDDD;
+  color:#333333;
+  font-size:12px;
+	font-weight:bold;
+}
+
+button:disabled{
+  background: #dddddd;
+}
+
+.details{
+  margin-top: 15px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 60px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.button-group{
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  min-width: 100px;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 5px solid #001e5e;
 }
