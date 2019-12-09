@@ -55,13 +55,13 @@ export default class Category extends Component {
         "POST",
         data,
         () => {
-            this.props.onCategorySave();
-            toast.success(`Successfully created a new category`);
+          this.props.onCategorySave();
+          toast.success(`Successfully created a new category`);
         },
         () => {
-            toast.error(
-                `Unable to create category. Possible duplicate category name`
-              );
+          toast.error(
+            `Unable to create category. Possible duplicate category name`
+          );
         }
       );
     } else {
@@ -75,11 +75,11 @@ export default class Category extends Component {
         "PUT",
         data,
         () => {
-            this.props.onCategorySave();
+          this.props.onCategorySave();
           toast.success(`Pokemon(s) to the category ${data.name}`);
         },
         () => {
-            toast.error(`Error occured while adding pokemon`);
+          toast.error(`Error occured while adding pokemon`);
         }
       );
     }

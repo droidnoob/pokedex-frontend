@@ -5,6 +5,7 @@ import PokeItemSmall from "./PokeItemSmall";
 import Confirmation from "../common/Confirmation";
 import ModalComponent from "../common/ModalComponent";
 import apiCall from "../common/apiCall";
+import ActionButtons from "./ActionButtons";
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -22,12 +23,12 @@ const getItemStyle = (isDragging, draggableStyle) => ({
   background: isDragging ? "lightgreen" : "grey",
 
   // styles we need to apply on draggables
-  ...draggableStyle,
+  ...draggableStyle
 });
 
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightblue" : "lightgrey",
-  width: "100%",
+  width: "100%"
 });
 
 export default class DragNDrop extends Component {
@@ -37,7 +38,7 @@ export default class DragNDrop extends Component {
       items: [],
       original: [],
       changed: false,
-      modalOpen: false,
+      modalOpen: false
     };
   }
 
@@ -53,27 +54,22 @@ export default class DragNDrop extends Component {
   }
 
   fetchData(category) {
-    apiCall(
-      `/category/${category}`,
-      "GET",
-      {},
-      res => {
-        this.addPokemon(res.data);
-      }
-    );
+    apiCall(`/category/${category}`, "GET", {}, res => {
+      this.addPokemon(res.data);
+    });
   }
 
   addPokemon = res => {
     this.setState({
       items: res.pokemons,
-      original: res.pokemons,
+      original: res.pokemons
     });
   };
 
   onReorder = () => {
     this.setState({
       items: this.state.original,
-      changed: false,
+      changed: false
     });
   };
 
@@ -93,7 +89,7 @@ export default class DragNDrop extends Component {
       () => {
         this.setState({
           original: this.state.items,
-          changed: false,
+          changed: false
         });
         toast.success(`Saved successfully!`);
       },
@@ -105,23 +101,18 @@ export default class DragNDrop extends Component {
 
   onDelete = () => {
     this.setState({
-      modalOpen: true,
+      modalOpen: true
     });
   };
 
   deleteCategory = () => {
-    apiCall(
-      `/category/${this.props.category}`,
-      "DELETE",
-      {},
-      () => {
-        this.setState({
-          modalOpen: false
-        });
-        toast.success(`Deleted category ${this.props.category}`);
-        this.props.onCategoryDelete();
-      }
-    );
+    apiCall(`/category/${this.props.category}`, "DELETE", {}, () => {
+      this.setState({
+        modalOpen: false
+      });
+      toast.success(`Deleted category ${this.props.category}`);
+      this.props.onCategoryDelete();
+    });
   };
 
   onDragEnd = result => {
@@ -141,32 +132,15 @@ export default class DragNDrop extends Component {
     });
   };
 
-  // Normally you would want to split things out into separate components.
-  // But in this example everything is just done in one place for simplicity
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col-md-12 button-group">
-            <button
-              className="pill primary"
-              disabled={!this.state.changed}
-              onClick={this.onSave}
-            >
-              Save Changes
-            </button>
-            <button
-              className="pill secondary"
-              disabled={!this.state.changed}
-              onClick={this.onReorder}
-            >
-              Undo Reorder
-            </button>
-            <button className="pill danger" onClick={this.onDelete}>
-              Delete Category
-            </button>
-          </div>
-        </div>
+        <ActionButtons
+          onSave={this.onSave}
+          onReorder={this.onReorder}
+          onDelete={this.onDelete}
+          disabled={this.state.changed}
+        />
         <div className="row">
           <div className="col-md-12">
             <DragDropContext onDragEnd={this.onDragEnd}>

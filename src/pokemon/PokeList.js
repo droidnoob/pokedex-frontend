@@ -61,7 +61,7 @@ export default class PokeList extends Component {
             }
           );
         }
-      }, 500)
+      }, 100)
     );
   }
 
@@ -90,16 +90,11 @@ export default class PokeList extends Component {
   }
 
   getCategories() {
-    apiCall(
-      "/categories",
-      "GET",
-      {},
-      res => {
-        this.setState({
-          categories: res.data
-        });
-      }
-    );
+    apiCall("/categories", "GET", {}, res => {
+      this.setState({
+        categories: res.data
+      });
+    });
   }
 
   searchPokemon() {
