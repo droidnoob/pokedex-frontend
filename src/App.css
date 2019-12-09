@@ -58,9 +58,6 @@ body {background-color: #ffce31;}
   border-radius: 5px;
 }
 
-.select-input{
-  margin: 10px 0;
-}
 
 .search-input::placeholder {
   color: #b6b6b6;
@@ -74,12 +71,11 @@ body {background-color: #ffce31;}
 	width:fit-content;
 	height:60px;
   bottom:40px;
-  right: 46%;
+  right: 5%;
 	background-color:#001e5e;
 	color:#FFF;
 	border-radius:50px;
 	text-align: center;
-  box-shadow: 2px 2px 3px #999;
 }
 button.float{
   outline: none;
@@ -90,15 +86,12 @@ button.float{
 }
 
 .Modal {
-  position: absolute;
+  position: relative;
   margin: auto;
-  padding: 50px;
-  width: 60%;
+  padding: 5%;
+  width: 70%;
   height: fit-content;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
+  top: 30%;
   background-color: rgb(255, 255, 255);
 }
 

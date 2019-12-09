@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Confirmation(props) {
   return (
-    <div className="container">
+    <div>
       <div className="row">
         <div className="col-md-12">
           <strong>{`Are you sure you want to delete '${props.name}'?`}</strong>

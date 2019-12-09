@@ -87,7 +87,7 @@ export default class Category extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col-md-12 select-input">
             <h5>Select an existing category</h5>

@@ -195,8 +195,8 @@ export default class PokeList extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="App-content">
+      <div className="App-content">
+        <div className="container">
           <div className="row">
             <Tabs
               tabs={[{ name: "All" }, ...this.state.categories]}
@@ -245,7 +245,7 @@ export default class PokeList extends Component {
           </div>
         </div>
         {this.state.pokemonsSelected.length > 0 && (
-          <div>
+          <div className="row">
             <FloatingButton text="Add to Category" onClick={this.openModal} />
             <ModalComponent
               open={this.state.modalOpen}
